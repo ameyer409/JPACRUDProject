@@ -9,9 +9,13 @@
 </head>
 <body>
 <h2>Ouch man I stubbed my toe!</h2>
+
 <form action="stub.do" method="post">
-Toe Stub ID: <input type="text" name="stubId">
+Search Toe Stub by ID: <input type="text" name="stubId">
 <input type="submit" value="submit">
+
+<h2>Add Toe Stub</h2>
+	<a href="addToeStub.do">click here!</a>
 </form>
 </body>
 </html>

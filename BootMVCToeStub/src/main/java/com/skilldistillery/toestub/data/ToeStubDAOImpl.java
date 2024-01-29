@@ -19,8 +19,33 @@ public class ToeStubDAOImpl implements ToeStubDAO{
 	public ToeStub getToeStubById(int id) {
 		ToeStub managedTs = null;
 		managedTs = em.find(ToeStub.class, id);
-		System.out.println(managedTs);
 		return managedTs;
 	}
+
+	@Override
+	public ToeStub create(ToeStub ts) {
+		em.persist(ts);
+		return ts;
+	}
+
+	@Override
+	public ToeStub update(ToeStub ts, int id) {
+		ToeStub managedTs = null;
+		managedTs = em.find(ToeStub.class, id);
+		managedTs.setToe(ts.getToe());
+		managedTs.setStubTime(ts.getStubTime());
+		managedTs.setCrackedNail(ts.isCrackedNail());
+		managedTs.setStillHealing(ts.isStillHealing());
+		return managedTs;
+	}
+
+	@Override
+	public boolean destroy(int id) {
+		ToeStub managedTs = em.find(ToeStub.class, id);
+		em.remove(managedTs);
+		return em.find(ToeStub.class, id) == null;
+	}
+	
+	
 
 }

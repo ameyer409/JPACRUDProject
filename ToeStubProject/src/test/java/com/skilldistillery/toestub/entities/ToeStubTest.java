@@ -51,6 +51,5 @@ class ToeStubTest {
 		assertEquals(false, ts.isStillHealing());
 		assertEquals(2023, ts.getStubTime().getYear());
 		assertTrue(Toe.RIGHTPINKYTOE.equals(ts.getToe()));
-		
 	}
 }

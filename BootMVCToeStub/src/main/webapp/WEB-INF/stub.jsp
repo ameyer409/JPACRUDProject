@@ -5,16 +5,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Toe Stub</title>
 </head>
 <body>
 	<c:choose>
 		<c:when test="${not empty ts}">
-			<h5>${ts.id}: ${ts.crackedNail}</h5>
+			<h3>${ts.toe}</h3>
+			<h3>Time of toe stub: ${ts.stubTime}</h3> 
+			<h3>Toe nail cracked?: ${ts.crackedNail}</h3>
+			<h3>Is it still healing?: ${ts.stillHealing}</h3>
 		</c:when>
 		<c:otherwise>
-			<h5>Can't Find Toe Stub</h5>
+			<h3>Can't Find Toe Stub</h3>
 		</c:otherwise>
 	</c:choose>
+	<a href="updateFilm.do?filmId=${ts.id}">Update Toe Stub</a>
+	<br>
+	<a href="deleteFilm.do?id=${ts.id}">Delete Toe Stub</a>
+	<br>
+	<a href="/home.do">Return to Home Page</a>
 </body>
 </html>

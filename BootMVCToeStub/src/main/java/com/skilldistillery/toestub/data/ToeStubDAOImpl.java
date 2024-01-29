@@ -32,10 +32,12 @@ public class ToeStubDAOImpl implements ToeStubDAO{
 	public ToeStub update(ToeStub ts, int id) {
 		ToeStub managedTs = null;
 		managedTs = em.find(ToeStub.class, id);
+		if(managedTs != null) {
 		managedTs.setToe(ts.getToe());
 		managedTs.setStubTime(ts.getStubTime());
 		managedTs.setCrackedNail(ts.isCrackedNail());
 		managedTs.setStillHealing(ts.isStillHealing());
+		}
 		return managedTs;
 	}
 

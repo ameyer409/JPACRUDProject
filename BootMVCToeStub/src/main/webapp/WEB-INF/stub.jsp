@@ -19,9 +19,9 @@
 			<h3>Can't Find Toe Stub</h3>
 		</c:otherwise>
 	</c:choose>
-	<a href="updateFilm.do?filmId=${ts.id}">Update Toe Stub</a>
+	<a href="updateToeStub.do?stubId=${ts.id}">Update Toe Stub</a>
 	<br>
-	<a href="deleteFilm.do?id=${ts.id}">Delete Toe Stub</a>
+	<a href="deleteToeStub.do?stubId=${ts.id}">Delete Toe Stub</a>
 	<br>
 	<a href="/home.do">Return to Home Page</a>
 </body>

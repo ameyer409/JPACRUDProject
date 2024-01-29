@@ -52,13 +52,36 @@ public class ToeStubController {
 		return "createToeStub";
 	}
 	
-	@PostMapping(path = "updateToeStub.do")
+	@GetMapping(path = "updateToeStub.do")
 	public ModelAndView updateToeStubDetails(@RequestParam("stubId") int id) {
 		ModelAndView mv = new ModelAndView();
 		ToeStub ts = tsDAO.getToeStubById(id);
-		mv.addObject("tw", ts);
+		System.out.println(ts);
+		mv.addObject("ts", ts);
 		mv.setViewName("toeStubEdit");
 		return mv;
+	}
+	
+	@PostMapping(path = "editToeStub.do")
+	public ModelAndView editFilmDetails(ToeStub toeStub) {
+		ModelAndView mv = new ModelAndView();
+		ToeStub ts = tsDAO.update(toeStub, toeStub.getId());
+		mv.addObject("ts", ts);
+		mv.setViewName("toeStubEditComplete");
+		return mv;
+	}
+
+	@GetMapping(path = "deleteToeStub.do")
+	public ModelAndView deleteToeStub(@RequestParam("stubId") int id) {
+
+		Boolean deleteMessage = tsDAO.destroy(id);
+
+		ModelAndView mv = new ModelAndView();
+
+		mv.addObject("wasDeleted", deleteMessage);
+		mv.setViewName("delete");
+		return mv;
+
 	}
 }
 

@@ -2,6 +2,7 @@ package com.skilldistillery.toestub.entities;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -47,5 +48,9 @@ class ToeStubTest {
 		assertNotNull(ts.getId());
 		assertNotNull(ts.isCrackedNail());
 		assertEquals(false, ts.isCrackedNail());
+		assertEquals(false, ts.isStillHealing());
+		assertEquals(2023, ts.getStubTime().getYear());
+		assertTrue(Toe.RIGHTPINKYTOE.equals(ts.getToe()));
+		
 	}
 }

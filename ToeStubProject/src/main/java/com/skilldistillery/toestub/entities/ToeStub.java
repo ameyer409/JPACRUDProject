@@ -1,9 +1,11 @@
 package com.skilldistillery.toestub.entities;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -16,10 +18,10 @@ public class ToeStub {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-	@Column(name="toe")
+	@Enumerated(EnumType.STRING)
 	private Toe toe;
 	@Column(name="stub_time")
-	private LocalDateTime stubTime;
+	private LocalDate stubTime;
 	@Column(name="cracked_nail")
 	private boolean crackedNail;
 	@Column(name="still_healing")
@@ -53,12 +55,20 @@ public class ToeStub {
 		this.toe = toe;
 	}
 
-	public LocalDateTime getStubTime() {
-		return stubTime;
+//	public LocalDateTime getStubTime() {
+//		return stubTime;
+//	}
+
+	public void setStubTime(LocalDate stubTime) {
+		this.stubTime = stubTime;
 	}
 
-	public void setStubTime(LocalDateTime stubTime) {
-		this.stubTime = stubTime;
+//	public void setStubTime(LocalDateTime stubTime) {
+//		this.stubTime = stubTime;
+//	}
+
+	public LocalDate getStubTime() {
+		return stubTime;
 	}
 
 	public boolean isStillHealing() {

@@ -23,6 +23,6 @@
 			<p>Toe Stub Could Not Be Updated</p>
 		</c:otherwise>
 	</c:choose>
-	<a href="/home.do">Return to Home Page</a>
+	<a href="home.do">Return to Home Page</a>
 </body>
 </html>

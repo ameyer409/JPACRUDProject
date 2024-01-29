@@ -16,7 +16,7 @@
         <p>Toe Stub was not deleted</p>
     </c:if>
     <br>
-    	<a href="/home.do">Return to Home Page</a>
+    	<a href="home.do">Return to Home Page</a>
     
 </body>
 </html>
